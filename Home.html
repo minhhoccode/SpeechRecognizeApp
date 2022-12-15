@@ -1,0 +1,130 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="style3.css"> -->
+    <link rel="stylesheet" href="style4.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link fontawesome https://kit.fontawesome.com/944eb371a4.js -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/944eb371a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="theme-section">
+        <div class="header-left">
+          <img
+            src="https://sinhvien.huce.edu.vn/Content/AConfig/images/sv_header_loginBAK.png"
+            alt="Huce logo"
+          />
+        </div>
+        <div class="header-right">
+          <a href="#">About Us</a>
+          <i class="fas fa-th"></i>
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+    </div>
+    <div class="Rs"></div>
+    <div id="theme-wrapper">
+      <div id="theme-picker-section" class="theme-section">
+        <input type="radio" name="theme" value="white" checked="true" />
+        <input type="radio" name="theme" value="red" />
+        <input type="radio" name="theme" value="orange" />
+        <input type="radio" name="theme" value="yellow" />
+        <input type="radio" name="theme" value="green" />
+        <input type="radio" name="theme" value="blue" />
+        <input type="radio" name="theme" value="indigo" />
+        <!-- <input type="radio" name="theme" value="violet" /> -->
+        <input type="radio" name="theme" value="black" />
+      </div>
+      <div id="search-section" class="theme-section">
+        <h1 style="font-family: 'Lobster'; font-size: 35px">
+          <span style="font-family: 'Rubik'">Voice system </span> administration 
+        </h1>
+      </div>
+      <div id="utils-section" class="theme-section">
+        <button
+          type="button"
+          id="Speaker"
+          onclick="Speak()"
+          class="theme-button short cl-btn"
+        >
+          <i class="fa-light fa-volume"></i>
+        </button>
+        <button
+          type="button"
+          id="micro"
+          onclick="Micro()"
+          class="theme-button short cl-btn"
+        >
+          <i class="fa-light fa-microphone"></i>
+        </button>
+        <button
+          type="button"
+          id="language"
+          onclick="ChangeLanguage()"
+          class="theme-button short cl-btn"
+        >
+          <i class="fa-light fa-language"></i>
+        </button>
+      </div>
+      <div id="progress-section" class="theme-section">
+        <p>Your current language is English</p>
+      </div>
+      <div id="image-section" class="theme-section vertical">
+        <div
+          style="
+            height: 20vh;
+            background-color: #000;
+            width: 100%;
+            border-radius: 0.3 rem;
+          "
+        >
+          <textarea
+            type="text"
+            style="width: 100%;
+            height: 100%;
+            font-family: 'Ubuntu Mono', monospace;
+            "
+            class="terminal_input"
+            id="terminal_input"
+            onkeypress="onTestChange()"
+          >root@localhost:~$</textarea>
+        </div>
+      </div>
+      <div class="theme-section">
+        <p>
+          <b>What is speech to text?</b>
+        </p>
+        <p>
+          Speech to text is a technology that allows you to convert your speech
+          into text. It is a very useful tool for people who have difficulty
+          typing or writing. It is also useful for people who have difficulty
+          reading and writing.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="index3.js"></script>
+  <script type="text/javascript" src="Themed.js"></script>
+  <style>
+   
+  </style>
+</html>

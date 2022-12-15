@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style4.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/944eb371a4.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="header">
+        <div class="theme-section">
+          <div class="header-left">
+            <img
+              src="https://sinhvien.huce.edu.vn/Content/AConfig/images/sv_header_loginBAK.png"
+              alt="Huce logo"
+            />
+          </div>
+          <div class="header-right">
+            <a href="#">About Us</a>
+            <i class="fas fa-th"></i>
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="Rs"></div>
+      <div id="theme-wrapper">
+        <div id="theme-picker-section" class="theme-section">
+            <input type="radio" name="theme" value="white" checked="true" />
+            <input type="radio" name="theme" value="red" />
+            <input type="radio" name="theme" value="orange" />
+            <input type="radio" name="theme" value="yellow" />
+            <input type="radio" name="theme" value="green" />
+            <input type="radio" name="theme" value="blue" />
+            <input type="radio" name="theme" value="indigo" />
+            <input type="radio" name="theme" value="black" />
+          </div>
+        <div class="theme-section block">
+            
+            <div class="form">
+                <h2 style="font-size: 35px; font-family: 'Rubik';">Login</h2>
+                <br/>
+                <div action="http://127.0.0.1:5000/api/auth/" method="POST">
+                    <div class="form-group ">
+                        <label for="username">Username</label>
+                        <input class="theme-input" type="text" name="username" id="username" placeholder="Username" />
+                    </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="theme-input" type="password" name="password" id="password" placeholder="Password" />
+                </div>            
+            <p>Don't have account yet? 
+                <a href="">
+                    Create one
+                </a>
+            </p>
+
+            <div class="form-group">
+                <button class="theme-button short cl-btn"
+                onclick="login()"
+                >Login</button>
+            </div>
+        </div>
+        </div>
+    
+</body>
+<script type="text/javascript"
+src="Themed.js"
+></script>
+
+<script type = "text/javascript"
+>
+// Login with username admin, password = admin
+function login() {
+    const server = "http://127.0.0.1:5000/api/";
+
+    // using axios send to server
+    axios.post(server + "auth/", {
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
+    })
+    .then(function (response) {
+        if (response.data.auth == "true") {
+            window.location.href = "Home.html";
+        
+        } else {
+            alert("Login failed");
+        }
+    })
+}
+</script>
+
+<style>
+    /* #theme-wrapper{
+        display: grid;
+        place-items: center;
+        height: 70vh;
+    } */
+    .block{        
+        min-width: 380px;
+        min-height: 380px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</html>
